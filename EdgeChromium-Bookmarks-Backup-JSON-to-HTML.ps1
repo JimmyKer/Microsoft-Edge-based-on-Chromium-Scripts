@@ -1,11 +1,12 @@
 ﻿# Read EdgeChromium Bookmarks (JSON File) and Export/Backup to HTML File
 # Gunnar Haslinger, 30.10.2019 - tested width EdgeChromium Beta 78
+# Jimmy kerckhofs, 10.02.2020 - updated and tested with EdgeChromium 88
 
 # Path to EdgeChromium Bookmarks File and HTML Export
-$JSON_File_Path = "$env:localappdata\Microsoft\Edge Beta\User Data\Default\Bookmarks"
+$JSON_File_Path = "$env:localappdata\Microsoft\Edge\User Data\Default\Bookmarks"
 if (!(Test-Path -Path $JSON_File_Path)) { throw "Source-File Path $JSON_File_Path does not exist!" }
 
-$HTML_File_Path = "$env:userprofile\backup"
+$HTML_File_Path = "$($env:USERPROFILE)\Desktop\"
 if (!(Test-Path -Path $HTML_File_Path)) { throw "Destination-Path $HTML_File_Path does not exist!" }
 $HTML_File_Path = "$HTML_File_Path\EdgeChromium-Bookmarks.backup.html"
 
